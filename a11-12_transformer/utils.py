@@ -14,7 +14,7 @@ from tqdm import tqdm
 
 def get_data(data, device):
     inp_data = data["input_ids"].to(device)
-    labels = data["labels"].to(device)
+    labels = data["labels"].long().to(device)
     return inp_data,labels
 
 def validate(model, val_loader, device):
